@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ExcelColNamePicker</string>
+    <string name="first_number">Enter first number</string>
+    <string name="second_number">Enter second number</string>
+    <string name="column_number">Show Numbering</string>
+    <string name="show_number_picker">Show Number Picker</string>
+</resources>
