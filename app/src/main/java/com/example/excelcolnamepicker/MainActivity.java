@@ -52,19 +52,27 @@ public class MainActivity extends AppCompatActivity {
 
 
     private String getColName(int col) {
-        StringBuilder builder = new StringBuilder();
-        while (col > 0) {
-            int remainder = col % 26;
-            if (remainder == 0) {
-                builder.append('Z');
-                col = (col / 26) - 1;
-            } else {
-                builder.append((char) (64 + remainder));
-                col = col / 26;
+        {
+            // To store result (Excel column name)
+            StringBuilder columnName = new StringBuilder();
+
+            while (col > 0) {
+                // Find remainder
+                int rem = col % 26;
+
+                // If remainder is 0, then a
+                // 'Z' must be there in output
+                if (rem == 0) {
+                    columnName.append("Z");
+                    col = (col / 26) - 1;
+                } else {                         // If remainder is non-zero
+                    columnName.append((char) ((rem - 1) + 'A'));
+                    col = col / 26;
+                }
             }
+
+            // Reverse the string and print result
+            return columnName.reverse().toString();
         }
-
-        return builder.reverse().toString();
     }
-
 }
